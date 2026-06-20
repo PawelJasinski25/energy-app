@@ -159,7 +159,7 @@ class EnergyServiceTest {
         assertEquals(50.0, result.get(1).cleanEnergyPercentage());
 
         assertEquals(today.plusDays(2).toLocalDate(), result.get(2).date());
-        assertEquals(0.0, result.get(2).cleanEnergyPercentage()); 
+        assertEquals(0.0, result.get(2).cleanEnergyPercentage());
     }
 
     @Test
