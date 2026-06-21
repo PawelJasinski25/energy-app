@@ -3,6 +3,7 @@
 Aplikacja webowa stworzona w ramach zadania rekrutacyjnego. Służy do monitorowania aktualnego oraz prognozowanego miksu energetycznego Wielkiej Brytanii, a także do wyznaczania optymalnego okna czasowego do ładowania pojazdów elektrycznych, maksymalizując udział czystej energii.
 
 Aplikacja jest dostępna pod adresem: https://energy-app-gojm.onrender.com
+>  Aplikacja jest hostowana na darmowym planie platformy Render. W związku z tym instancje usypiają się po 15 minutach nieaktywności. **Pierwsze załadowanie frontendu oraz pierwsze wysłane zapytanie do backendu może potrwać około 50-60 sekund**. Każde kolejne zapytanie zostanie obsłużone natychmiastowo.
 
 ## Wykorzystane technologie
 **Backend:**
@@ -37,7 +38,7 @@ Upewnij się, że masz zainstalowane:
 * `GET /api/energy/mix`  
   Pobiera dane o miksie energetycznym z 3 dni. Grupuje interwały półgodzinne według daty, oblicza średnie wartości dla każdego dnia oraz procentowy udział czystej energii.
 
-* `GET /api/energy/optimize?hours={1-6}`  
+* `GET /api/energy/optimal-window?hours={1-6}`  
   Przyjmuje długość okna ładowania w pełnych godzinach. Zwraca datę i godzinę rozpoczęcia, zakończenia oraz średni procent czystej energii w najbardziej optymalnym przedziale z najbliższych dwóch dni.
 
   Backend jest dostępny pod adresem: https://energy-app-backend-d9v5.onrender.com
