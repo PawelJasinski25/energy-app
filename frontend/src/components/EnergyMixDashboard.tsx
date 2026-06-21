@@ -109,7 +109,7 @@ export const EnergyMixDashboard = () => {
                                             </Pie>
                                             <Tooltip
                                                 formatter={(value: unknown) =>
-                                                    typeof value === 'number' ? `${value.toFixed(1)}%` : `${value}%`
+                                                    typeof value === 'number' ? `${value.toFixed(2)}%` : `${value}%`
                                                 }
                                             />
                                             <Legend />
