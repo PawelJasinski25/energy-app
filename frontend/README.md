@@ -1,73 +1,20 @@
-# React + TypeScript + Vite
+# Energy App - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ta część aplikacji odpowiada za interfejs użytkownika oraz atrakcyjną wizualnie prezentację danych. Wyświetla miks energetyczny za pomocą wykresów kołowych i precyzyjnie prezentuje wyniki algorytmu wyznaczającego optymalne okno czasowe do ładowania pojazdów elektrycznych.
 
-Currently, two official plugins are available:
+## Wykorzystane technologie
+* **Język:** TypeScript
+* **Biblioteka:** React
+* **Testy:** Vitest & React Testing Library
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Frontend jest dostępny pod adresem: https://energy-app-gojm.onrender.com
 
-## React Compiler
+> Aplikacja jest hostowana na darmowym planie platformy Render. W związku z tym instancje usypiają się po 15 minutach nieaktywności. **Pierwsze załadowanie frontendu może potrwać około 50-60 sekund**. Każde kolejne zapytanie zostanie obsłużone natychmiastowo.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Uruchomienie testów jednostkowych
+```bash
+npm install
+npm run test
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+*Pełna instrukcja uruchomienia całej aplikacji (zarówno frontendu, jak i backendu) za pomocą Dockera znajduje się w [głównym pliku README projektu](https://github.com/PawelJasinski25/energy-app/blob/main/README.md).*
