@@ -25,8 +25,9 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGenericException(Exception ex) {
+        ex.printStackTrace();
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(new ErrorResponse("Wystąpił nieoczekiwany błąd serwera."));
+                .body(new ErrorResponse("Wystąpił nieoczekiwany błąd serwera:" + ex.getMessage() ));
     }
 }
